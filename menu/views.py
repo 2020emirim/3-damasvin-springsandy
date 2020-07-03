@@ -27,7 +27,7 @@ class BubbleteaCreateView(CreateView):
 class DrinkUpdateView(UpdateView):
     model = Drink
     fields = '__all__'
-    template_name = 'menu/drink_update.html'
+    template_name_su = 'menu/drink_update.html'
     success_url = reverse_lazy('menu:list')
 
 class DrinkDeleteView(DeleteView):
