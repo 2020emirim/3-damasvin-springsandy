@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView
 
 from menu.models import Drink
+from order.forms import OrderModelForm
 from order.models import Order
 
 
@@ -18,7 +19,8 @@ class OrderListView(ListView):
 
 class OrderCreateView(CreateView):
     model = Order
-    fields = '__all__'
+    # fields = '__all__'
+    form_class = OrderModelForm
     template_name_suffix = '_create'
     success_url = reverse_lazy('order:list')
 
@@ -35,7 +37,8 @@ class OrderCreateView(CreateView):
 
 class OrderUpdateView(UpdateView):
     model = Order
-    fields = '__all__'
+    # fields = '__all__'
+    form_class = OrderModelForm
     template_name_suffix = '_update'
     success_url = reverse_lazy('order:list')
 
